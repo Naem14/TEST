@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./Clock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="main-container">
+     <div class="rain">
+         <div class="drops">
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            <i class="fa fa-tint" style="color: red;"></i>
+            
+         </div>
+     </div>
+        <div class="ana-clock">
+          
+            <div class="numbers"></div>
+            <div class="number">
+                 <div class="num12">12</div>
+                <div class="num1">1</div>
+                <div class="num2">2</div>
+                <div class="num3">3</div>
+                <div class="num4">4</div>
+                <div class="num5">5</div>
+                <div class="num6">6</div>
+                <div class="num7">7</div>
+                <div class="num8">8</div>
+                <div class="num9">9</div>
+                <div class="num10">10</div>
+                <div class="num11">11</div>
+            </div>
+            <p id="ddate" class="date"></p>
+            <div class="hour-hand" id="hour-hand"></div>
+            <div class="min-hand" id="min-hand"></div>
+            <div class="second-hand" id="second-hand"></div>
+            <!-- <div class="lines">
+                <p class="line1"></p>
+                <p class="line2"></p>
+            </div> -->
+        </div>
+    </div>
+    <script>
+           function time(){
+            // let  ddt =new Date().toLocaleTimeString();
+            let ddt=new Date(new Date().getTime() + 5*60*60*1000).toLocaleTimeString();
+            // let ddt = new Date().toLocaleString("en-US", {timeZone: "America/New_York"})
+            document.getElementById("ddate").innerHTML=ddt;
+        }
+        setInterval(time,1000)
+
+        const secondHand = document.querySelector('#second-hand');
+        const minsHand = document.querySelector('#min-hand');
+        const hourHand = document.querySelector('#hour-hand');
+
+        // function cal(offset){
+        //     var b= new Date();
+        //     var utc=b.getTime()+(b.getTimezoneOffset()*60000);
+        //     var nd = new Date(utc+(3600000*offset));
+        //     return nd.toLocaleString();
+        // }
+
+ function clock() {
+  const dtte =new Date();
+
+
+       const seconds = dtte.getSeconds();
+       const secondsDegrees = ((seconds / 60) * 360) + 90;
+       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+       const mints = dtte.getMinutes();
+       const minsDegrees = ((mints / 60) * 360) + ((seconds/60)*6) + 90;
+       minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+      const hours = dtte.getHours();
+      const hourDegrees = ((hours / 12) * 360) + ((mints/60)*30) + 90;
+      hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
+
+setInterval(clock, 1000);
+
+clock();
+    </script>
+</body>
+</html>

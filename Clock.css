@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.rain {
+  width: 100%;
+  height: 50px;
+  background-color: skyblue;
+  margin-bottom: 90px;
+}
+.drops > i {
+  padding: 0px 50px;
+  transform: rotate(15deg);
+  animation: mymove 3s infinite ease;
+  z-index: 1;
+}
+@keyframes mymove {
+  from {
+    padding-top: 0px;
+  }
+  to {
+    padding-top: 180px;
+  }
+}
+.number {
+  position: relative;
+  color: rgb(14, 239, 255);
+}
+.num1 {
+  position: absolute;
+  top: 25px;
+  left: 73%;
+}
+.num2 {
+  position: absolute;
+  top: 73px;
+  left: 89%;
+}
+.num3 {
+  position: absolute;
+  top: 140px;
+  left: 95%;
+}
+.num4 {
+  position: absolute;
+  top: 210px;
+  left: 88%;
+}
+.num5 {
+  position: absolute;
+  top: 255px;
+  left: 71%;
+}
+.num6 {
+  position: absolute;
+  top: 280px;
+  left: 49%;
+}
+.num7 {
+  position: absolute;
+  top: 260px;
+  left: 26%;
+}
+.num8 {
+  position: absolute;
+  top: 211px;
+  left: 28px;
+}
+.num9 {
+  position: absolute;
+  top: 140px;
+  left: 7px;
+}
+.num10 {
+  position: absolute;
+  top: 73px;
+  left: 24px;
+}
+.num11 {
+  position: absolute;
+  top: 22px;
+  left: 76px;
+}
+.main-container {
+  max-width: 1440px;
+  text-align: center;
+  height: 100vh;
+  background-image: url(./pexels-nur-andi-ravsanjani-gusma-2422583.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ana-clock {
+  background-image: url(./pexels-daria-shevtsova-3981680.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: black;
+  border-radius: 50%;
+  margin: auto;
+}
+.second-hand {
+  width: 40%;
+  height: 3px;
+  background: gold;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform-origin: 100%;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.hour-hand {
+  width: 30%;
+  height: 4px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform-origin: 100%;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.min-hand {
+  width: 35%;
+  height: 3px;
+  background: #61afff;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform-origin: 100%;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.lines {
+  position: absolute;
+  top: 0px;
+  left: 150px;
+}
+.line1 {
+  position: absolute;
+  width: 5px;
+  height: 300px;
+  background-color: red;
+  transform: rotate(45deg);
+}
+.line2 {
+  width: 5px;
+  height: 300px;
+  background-color: red;
+  transform: rotate(90deg);
+  position: absolute;
+}
+.date {
+  position: absolute;
+  top: 78px;
+  left: 101px;
+  color: white;
+  font-size: 22px;
+  background-color: #741d1d00;
+}
